@@ -12,7 +12,7 @@ class SudokuRowVerifierSpec extends Specification {
 
         when:
         boolean valid = rowVerifier.verify(row)
-        
+
         then:
         true == valid
     }
