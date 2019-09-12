@@ -20,7 +20,7 @@ public class SudokuVerifier {
     private SudokuSegmentVerifier segmentVerifier;
 
     public SudokuVerifier() {
-        this.segmentVerifier = new BasicSudokuSegmentVerifier();
+        this.segmentVerifier = new SudokuSegmentVerifier();
     }
 
     public SudokuVerifier(SudokuSegmentVerifier segmentVerifier) {

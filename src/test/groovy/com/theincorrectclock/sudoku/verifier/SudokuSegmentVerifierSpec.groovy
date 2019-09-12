@@ -6,7 +6,7 @@ class SudokuSegmentVerifierSpec extends Specification {
 
     def "verifies empty sudoku segment as valid"() {
         given:
-        SudokuSegmentVerifier segmentVerifier = new BasicSudokuSegmentVerifier()
+        SudokuSegmentVerifier segmentVerifier = new SudokuSegmentVerifier()
         and:
         int[] segment = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -19,7 +19,7 @@ class SudokuSegmentVerifierSpec extends Specification {
 
     def "verifies valid sudoku segment as valid"() {
         given:
-        SudokuSegmentVerifier segmentVerifier = new BasicSudokuSegmentVerifier()
+        SudokuSegmentVerifier segmentVerifier = new SudokuSegmentVerifier()
         and:
         int[] segment = [0, 1, 0, 0, 1, 1, 1, 0, 0, 0]
 
@@ -32,7 +32,7 @@ class SudokuSegmentVerifierSpec extends Specification {
 
     def "verifies invalid sudoku segment as invalid"() {
         given:
-        SudokuSegmentVerifier segmentVerifier = new BasicSudokuSegmentVerifier()
+        SudokuSegmentVerifier segmentVerifier = new SudokuSegmentVerifier()
         and:
         int[] segment = [0, 1, 0, 0, 2, 0, 1, 0, 0, 0]
 

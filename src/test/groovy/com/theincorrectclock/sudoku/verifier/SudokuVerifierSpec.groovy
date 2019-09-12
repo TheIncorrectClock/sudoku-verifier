@@ -6,7 +6,7 @@ class SudokuVerifierSpec extends Specification {
 
     def "verifies empty sudoku puzzle as valid"() {
         given:
-        SudokuVerifier verifier = new SudokuVerifier(new BasicSudokuSegmentVerifier())
+        SudokuVerifier verifier = new SudokuVerifier(new SudokuSegmentVerifier())
         and:
         def puzzle = "000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 
@@ -19,7 +19,7 @@ class SudokuVerifierSpec extends Specification {
 
     def "verifies correctly filled sudoku puzzle as valid"() {
         given:
-        SudokuVerifier verifier = new SudokuVerifier(new BasicSudokuSegmentVerifier())
+        SudokuVerifier verifier = new SudokuVerifier(new SudokuSegmentVerifier())
 
         when:
         def valid = verifier.verify(puzzle)
@@ -34,7 +34,7 @@ class SudokuVerifierSpec extends Specification {
 
     def "verifies incorrectly filled sudoku puzzle as invalid"() {
         given:
-        SudokuVerifier verifier = new SudokuVerifier(new BasicSudokuSegmentVerifier())
+        SudokuVerifier verifier = new SudokuVerifier(new SudokuSegmentVerifier())
         "123456789789123456456789123312845963697312845845697312231574698968231574574968231"
 
         when:
@@ -50,7 +50,7 @@ class SudokuVerifierSpec extends Specification {
 
     def "verifies correctly partially filled sudoku puzzle as valid"() {
         given:
-        SudokuVerifier verifier = new SudokuVerifier(new BasicSudokuSegmentVerifier())
+        SudokuVerifier verifier = new SudokuVerifier(new SudokuSegmentVerifier())
 
         when:
         def valid = verifier.verify(puzzle)
@@ -65,7 +65,7 @@ class SudokuVerifierSpec extends Specification {
 
     def "verifies incorrectly partially filled sudoku puzzle as invalid"() {
         given:
-        SudokuVerifier verifier = new SudokuVerifier(new BasicSudokuSegmentVerifier())
+        SudokuVerifier verifier = new SudokuVerifier(new SudokuSegmentVerifier())
 
         when:
         def valid = verifier.verify(puzzle)
@@ -80,7 +80,7 @@ class SudokuVerifierSpec extends Specification {
 
     def "verifies incomplete sudoku puzzle as invalid"() {
         given:
-        SudokuVerifier verifier = new SudokuVerifier(new BasicSudokuSegmentVerifier())
+        SudokuVerifier verifier = new SudokuVerifier(new SudokuSegmentVerifier())
         and:
         def puzzle = "123456789000000000980000000"
 
